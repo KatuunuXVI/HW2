@@ -6,7 +6,12 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body onload="init()">
+
+<body onload="init()" onclick="startGaz()">
+<p><a href="profile.html">View Profile</a></p>
+<audio loop id="gaz" hidden>
+    <source src="images/gaz.mp3" type="audio/mpeg">
+</audio>
 <table id="posts">
     <tr>
         <th>Posts</th>
@@ -19,35 +24,47 @@
             sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
         <td>
             <figure>
-                <img id="ass" src="images/rogel.jpg" alt="Girl in a jacket" width="150">
+                <img id="ass" src="images/rogel.jpg" width="150">
                 <figcaption>Brightest day</figcaption>
-                <input type="button" value="ur mom" align="right" onclick="assIntervalSwitch()">
+                <input type="button" id="assbutton" value="pause" align="right" onclick="assIntervalSwitch()">
             </figure>
         </td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
+        <td>
+            <figure>
+                <img id="mm" src="images/mm1.jpg" width="150">
+                <figcaption>Man of Mega</figcaption>
+                <input type="button" id="mmbutton" value="pause" align="right" onclick="mmIntervalSwitch()">
+            </figure>
+        </td>
+        <td>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+            sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+            est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+            tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+            nostrum exercitationem ullam corporis suscipit</td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
+        <td>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+            deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+            provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
+            dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum (lol)
+            soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
+            possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut
+            officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et
+            molestiae (lol) non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+            reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+        </td>
+        <td>
+            <figure>
+                <img id="anime" src="images/kuchinashi.jpg" width="150">
+                <figcaption>Animu</figcaption>
+                <input type="button" id="animebutton" value="Pause" align="right" onclick="animeIntervalSwitch()">
+            </figure>
+        </td>
     </tr>
 </table>
 </body>

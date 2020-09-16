@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="profile.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="init">
+<a href="main.html">Main Page</a><br>
+<h2>Update Profile</h2>
+<b><label id="dobLabel">Date of Birth: 04-20-1969</label></b><br><br>
+<label for="display" id="displayLabel">Display Name: Ap T. Negro</label><br>
+<input type="text" id="display" name="display" value=""><br>
+<label for="email" id="emailLabel">E-Mail Address: KoopaKiller64@mushroomkingdom.star</label><br>
+<input type="text" id="email" placeholder="abc@def.ghi" value=""><i id="emailAlert"></i><br>
+<label for="number" id="numberLabel">Phone Number: 123-456-7890</label><br>
+<input type="text" id="number" name="number" placeholder="123-456-7890" value=""><i id="numberAlert"></i><br>
+    <label for="zip" id="zipLabel">Zip Code: 99999</label><br>
+    <input type="text" id="zip" name="zip" value=""><i id="zipAlert"></i><br>
+    <label for="password" id="passwordLabel">Password: ********</label><br>
+    <input type="password" id="password" name="password" value=""><i id="passwordAlert"></i><br>
+    <label for="confirm" id="confirmLabel">Confirm Password</label><br>
+    <input type="password" id="confirm" value=""><i id="confirmAlert"></i><br>
+    <input type="submit" onclick="validate()" value="Submit">
+
+</body>
+</html>
