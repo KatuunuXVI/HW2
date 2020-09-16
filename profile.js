@@ -24,36 +24,54 @@ function validate() {
         document.getElementById("passwordAlert").innerHTML = "Invalid Password"
         valid = false;
     }
-
+    let updateString = "";
     if(valid) {
         if(display.trim() !== "") {
-            document.getElementById("displayLabel").innerHTML = "Display Name: " + display
-            document.getElementById("display").value = ""
+            updateString += "Display Name, "
         }
         if(email.trim() !== "") {
-            document.getElementById("emailLabel").innerHTML = "Email Address: " + email;
-            document.getElementById("email").value ="";
-            document.getElementById("emailAlert").innerHTML = ""
-            document.getElementById("email").size = document.getElementById("emailLabel").innerHTML.length;
+            updateString += "Email, "
         }
         if(number.trim() !== "") {
-            document.getElementById("numberLabel").innerHTML = "Phone Number: " + number;
-            document.getElementById("number").value ="";
-            document.getElementById("numberAlert").innerHTML = ""
-            document.getElementById("number").size = document.getElementById("numberLabel").innerHTML.length;
+            updateString += "Phone Number, "
         }
         if(zip.trim() !== "") {
-            document.getElementById("zipLabel").innerHTML = "Zip Code: " + zip;
-            document.getElementById("zip").value ="";
-            document.getElementById("zipAlert").innerHTML = ""
-            document.getElementById("zip").size = document.getElementById("zipLabel").innerHTML.length;
+            updateString += "Zip Code, "
         }
         if(password.trim() !== "") {
-            document.getElementById("passwordLabel").innerHTML = "Password: " + "*".repeat(password.length);
-            document.getElementById("password").value ="";
-            document.getElementById("passwordAlert").innerHTML = ""
-            document.getElementById("password").size = document.getElementById("passwordLabel").innerHTML.length;
+            updateString += "Password, "
         }
+        document.getElementById("submit").value = "Updating: " + updateString.substring(0,updateString.length-2)
+        setTimeout(function() {
+            document.getElementById("submit").value = "Update"
+            if(display.trim() !== "") {
+                document.getElementById("displayLabel").innerHTML = "Display Name: " + display
+                document.getElementById("display").value = ""
+            }
+            if(email.trim() !== "") {
+                document.getElementById("emailLabel").innerHTML = "Email Address: " + email;
+                document.getElementById("email").value ="";
+                document.getElementById("emailAlert").innerHTML = ""
+            }
+            if(number.trim() !== "") {
+                document.getElementById("numberLabel").innerHTML = "Phone Number: " + number;
+                document.getElementById("number").value ="";
+                document.getElementById("numberAlert").innerHTML = ""
+            }
+            if(zip.trim() !== "") {
+                document.getElementById("zipLabel").innerHTML = "Zip Code: " + zip;
+                document.getElementById("zip").value ="";
+                document.getElementById("zipAlert").innerHTML = ""
+            }
+            if(password.trim() !== "") {
+                document.getElementById("passwordLabel").innerHTML = "Password: " + "*".repeat(password.length);
+                document.getElementById("password").value ="";
+                document.getElementById("confirm").value ="";
+                document.getElementById("passwordAlert").innerHTML = ""
+            }
+        },5000)
+
+
     }
 
 }
@@ -91,6 +109,24 @@ function validPasswords(password, confirmation) {
     return password === confirmation
 
 }
+let gaz = false
+let gaz2 = false
+let gaz3 = false
+let gaz4 = false
 
-function init() {
+function playGaz() {
+    if(!gaz) {
+        document.getElementById("gaz").play()
+        gaz = true;
+    } else if(!gaz2) {
+        document.getElementById("gaz2").play()
+        gaz2 = true;
+    } else if(!gaz3) {
+        document.getElementById("gaz3").play()
+        gaz3 = true;
+    } else if(!gaz4) {
+        document.getElementById("gaz4").play()
+        gaz4 = true;
+    }
+
 }

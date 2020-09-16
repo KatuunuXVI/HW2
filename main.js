@@ -1,3 +1,8 @@
+function randSeconds() {
+    const seconds = (Math.random() * 4000) + 1000
+    return seconds
+}
+
 const assList = ["images/lantern.png", "images/rogel.jpg"]
 let assIndex = 0
 let assInterval;
@@ -11,11 +16,13 @@ function assIntervalSwitch() {
     } else {
         document.getElementById("assbutton").value = "pause"
         document.getElementById("assbutton").onclick = assIntervalSwitch
-        assInterval = setInterval(switchAss, 1000)
+        assInterval = setInterval(switchAss, randSeconds())
         assIntervalOn = true
     }
 }
 function switchAss() {
+    clearInterval(assInterval)
+    assInterval = setInterval(switchAss, randSeconds())
     switch(assIndex) {
         case 0:
             document.getElementById("ass").src = assList[1]
@@ -41,12 +48,15 @@ function mmIntervalSwitch() {
     } else {
         document.getElementById("mmbutton").value = "play"
         document.getElementById("mmbutton").onclick = mmIntervalSwitch
-        mmInterval = setInterval(switchMM, 1000)
+        mmInterval = setInterval(switchMM, randSeconds())
         mmIntervalOn = true
     }
 }
 
 function switchMM() {
+    clearInterval(mmInterval)
+    mmInterval = setInterval(switchMM, randSeconds())
+
     if(mmIndex > 7) {
         mmIndex = 0
         document.getElementById("mm").src = mmList[mmIndex]
@@ -76,6 +86,8 @@ function animeIntervalSwitch() {
 }
 
 function switchAnime() {
+    clearInterval(animeInterval)
+    animeInterval = setInterval(switchAnime, randSeconds())
     if(animeIndex > 6) {
         animeIndex = 0
         document.getElementById("anime").src = animeList[animeIndex]
@@ -86,7 +98,6 @@ function switchAnime() {
 }
 
 function init() {
-    //
     assInterval = setInterval(switchAss, 1000);
     mmInterval = setInterval(switchMM, 1000);
     animeInterval = setInterval(switchAnime, 1000)
